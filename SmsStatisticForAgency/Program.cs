@@ -13,7 +13,7 @@ namespace SmsStatisticForAgency
         {
             SmsBrandnameSoapClient smsClient = new SmsBrandnameSoapClient();
             smsClient.GuiMotNoiDungNhieuSo(string.Empty, "0935669664", "[HSCV]Nhat test tin nhan", "ubndtth", "1682e86c", 8);
-            //SendSms();
+            ///SendSms();
             return;
         }
 
