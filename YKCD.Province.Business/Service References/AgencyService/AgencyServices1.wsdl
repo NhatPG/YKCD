@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ReceiveRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlDoc" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReceiveRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ReceiveRequestResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReceiveReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlDoc" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReceiveReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ReceiveReportResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="requestID" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteRequestResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ReceiveRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:ReceiveRequest" />
+  </wsdl:message>
+  <wsdl:message name="ReceiveRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:ReceiveRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReceiveReportSoapIn">
+    <wsdl:part name="parameters" element="tns:ReceiveReport" />
+  </wsdl:message>
+  <wsdl:message name="ReceiveReportSoapOut">
+    <wsdl:part name="parameters" element="tns:ReceiveReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteRequest" />
+  </wsdl:message>
+  <wsdl:message name="DeleteRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteRequestResponse" />
+  </wsdl:message>
+  <wsdl:portType name="AgencyServicesSoap">
+    <wsdl:operation name="ReceiveRequest">
+      <wsdl:input message="tns:ReceiveRequestSoapIn" />
+      <wsdl:output message="tns:ReceiveRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveReport">
+      <wsdl:input message="tns:ReceiveReportSoapIn" />
+      <wsdl:output message="tns:ReceiveReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRequest">
+      <wsdl:input message="tns:DeleteRequestSoapIn" />
+      <wsdl:output message="tns:DeleteRequestSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AgencyServicesSoap" type="tns:AgencyServicesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ReceiveRequest">
+      <soap:operation soapAction="http://tempuri.org/ReceiveRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveReport">
+      <soap:operation soapAction="http://tempuri.org/ReceiveReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRequest">
+      <soap:operation soapAction="http://tempuri.org/DeleteRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AgencyServicesSoap12" type="tns:AgencyServicesSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ReceiveRequest">
+      <soap12:operation soapAction="http://tempuri.org/ReceiveRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveReport">
+      <soap12:operation soapAction="http://tempuri.org/ReceiveReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRequest">
+      <soap12:operation soapAction="http://tempuri.org/DeleteRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AgencyServices">
+    <wsdl:port name="AgencyServicesSoap" binding="tns:AgencyServicesSoap">
+      <soap:address location="http://ykcd.phuloc.thuathienhue.egov.vn/Services/AgencyServices.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AgencyServicesSoap12" binding="tns:AgencyServicesSoap12">
+      <soap12:address location="http://ykcd.phuloc.thuathienhue.egov.vn/Services/AgencyServices.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

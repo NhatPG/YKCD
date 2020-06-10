@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ReceiveReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlDoc" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReceiveReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ReceiveReportResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRequestInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="requestID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="agencyID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRequestInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRequestInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="agencyID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllRequestResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="requestID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="agencyID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllReportResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetRequestSynced">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="performID" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetRequestSyncedResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SetRequestStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="performID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="date" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetRequestStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SetRequestStatusResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vanBan" type="tns:VanBanChiDao" />
+            <s:element minOccurs="0" maxOccurs="1" name="dsYKienChiDao" type="tns:ArrayOfYKienChiDao" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="VanBanChiDao">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MaVanBan" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="KyHieu" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="NgayBanHanh" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="NguoiKy" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NguoiSoanThao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TrichYeu" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DsFileDinhKem" type="tns:ArrayOfFileDinhKem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfFileDinhKem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FileDinhKem" nillable="true" type="tns:FileDinhKem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FileDinhKem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Content" type="s:base64Binary" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfYKienChiDao">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="YKienChiDao" nillable="true" type="tns:YKienChiDao" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="YKienChiDao">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="NoiDungThucHien" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ThoiHanThucHien" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="DsDonViThucHien" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="DsChuyenVienTheoDoi" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreateRequestResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ReceiveReportSoapIn">
+    <wsdl:part name="parameters" element="tns:ReceiveReport" />
+  </wsdl:message>
+  <wsdl:message name="ReceiveReportSoapOut">
+    <wsdl:part name="parameters" element="tns:ReceiveReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRequestInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRequestInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetRequestInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRequestInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetAllRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllReportSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllReport" />
+  </wsdl:message>
+  <wsdl:message name="GetAllReportSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetRequestSyncedSoapIn">
+    <wsdl:part name="parameters" element="tns:SetRequestSynced" />
+  </wsdl:message>
+  <wsdl:message name="SetRequestSyncedSoapOut">
+    <wsdl:part name="parameters" element="tns:SetRequestSyncedResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetRequestStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:SetRequestStatus" />
+  </wsdl:message>
+  <wsdl:message name="SetRequestStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:SetRequestStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateRequest" />
+  </wsdl:message>
+  <wsdl:message name="CreateRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateRequestResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ProvinceServiceSoap">
+    <wsdl:operation name="ReceiveReport">
+      <wsdl:input message="tns:ReceiveReportSoapIn" />
+      <wsdl:output message="tns:ReceiveReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRequestInfo">
+      <wsdl:input message="tns:GetRequestInfoSoapIn" />
+      <wsdl:output message="tns:GetRequestInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRequest">
+      <wsdl:input message="tns:GetAllRequestSoapIn" />
+      <wsdl:output message="tns:GetAllRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllReport">
+      <wsdl:input message="tns:GetAllReportSoapIn" />
+      <wsdl:output message="tns:GetAllReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetRequestSynced">
+      <wsdl:input message="tns:SetRequestSyncedSoapIn" />
+      <wsdl:output message="tns:SetRequestSyncedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetRequestStatus">
+      <wsdl:input message="tns:SetRequestStatusSoapIn" />
+      <wsdl:output message="tns:SetRequestStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateRequest">
+      <wsdl:input message="tns:CreateRequestSoapIn" />
+      <wsdl:output message="tns:CreateRequestSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ProvinceServiceSoap" type="tns:ProvinceServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ReceiveReport">
+      <soap:operation soapAction="http://tempuri.org/ReceiveReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRequestInfo">
+      <soap:operation soapAction="http://tempuri.org/GetRequestInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRequest">
+      <soap:operation soapAction="http://tempuri.org/GetAllRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllReport">
+      <soap:operation soapAction="http://tempuri.org/GetAllReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetRequestSynced">
+      <soap:operation soapAction="http://tempuri.org/SetRequestSynced" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetRequestStatus">
+      <soap:operation soapAction="http://tempuri.org/SetRequestStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateRequest">
+      <soap:operation soapAction="http://tempuri.org/CreateRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ProvinceServiceSoap12" type="tns:ProvinceServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ReceiveReport">
+      <soap12:operation soapAction="http://tempuri.org/ReceiveReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRequestInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetRequestInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRequest">
+      <soap12:operation soapAction="http://tempuri.org/GetAllRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllReport">
+      <soap12:operation soapAction="http://tempuri.org/GetAllReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetRequestSynced">
+      <soap12:operation soapAction="http://tempuri.org/SetRequestSynced" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetRequestStatus">
+      <soap12:operation soapAction="http://tempuri.org/SetRequestStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateRequest">
+      <soap12:operation soapAction="http://tempuri.org/CreateRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ProvinceService">
+    <wsdl:port name="ProvinceServiceSoap" binding="tns:ProvinceServiceSoap">
+      <soap:address location="http://ykcd.thuathienhue.egov.vn/Services/ProvinceService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ProvinceServiceSoap12" binding="tns:ProvinceServiceSoap12">
+      <soap12:address location="http://ykcd.thuathienhue.egov.vn/Services/ProvinceService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

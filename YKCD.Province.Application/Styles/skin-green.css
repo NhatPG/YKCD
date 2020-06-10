@@ -1,0 +1,112 @@
+﻿.panel-primary > .panel-heading {
+    color: #fff;
+    background-color: #07752C;
+    border-color: #07752C;
+}
+
+.footer > .well {
+    background-color: #07732B !important;
+    color: #fff;
+    min-height: 20px;
+    padding: 19px;
+    margin-bottom: 20px;
+    border: 1px solid #E3E3E3;
+}
+
+.navbar-default {
+    background-color: #07752C;    
+    border-color: #07752C;
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:hover {
+    color: #fff !important; 
+    background-color: #e7e7e7;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #fff;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
+    color: #fff;
+    background-color: #FFCC00;
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:hover {
+    color: #fff;
+    background-color: #FFCC00;
+}
+
+.navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
+    color: #fff;
+    background-color: #FFCC00;
+}
+
+.navbar {
+    border-radius: 0px;
+}
+
+.customer-group-row {
+    color: #07752C;
+}
+
+.interest-table th {
+    text-align: center;
+    background-color: #1FA648 !important;
+    color: #FFC509 !important;
+    border: 1px solid #fff;
+}
+
+.panel-primary {
+    border-color: #07752C;
+}
+
+a:focus, a:hover {
+    color: #07752C;
+    text-decoration: underline;
+}
+
+a {
+    color: #07752C;
+    text-decoration: none;
+}
+
+.with-nav-tabs.panel-primary .nav-tabs > li.active > a, .with-nav-tabs.panel-primary .nav-tabs > li.active > a:hover, .with-nav-tabs.panel-primary .nav-tabs > li.active > a:focus {
+    color: #07752C;
+    background-color: #fff;
+    border-color: #07752C;
+    border-bottom-color: transparent;
+}
+
+.with-nav-tabs.panel-primary .nav-tabs > .open > a, .with-nav-tabs.panel-primary .nav-tabs > .open > a:hover, .with-nav-tabs.panel-primary .nav-tabs > .open > a:focus, .with-nav-tabs.panel-primary .nav-tabs > li > a:hover, .with-nav-tabs.panel-primary .nav-tabs > li > a:focus {
+    color: #fff;
+    background-color: #07752C;
+    border-color: transparent;
+}
+
+.pagination > .active > a, .pagination > .active > a:focus, .pagination > .active > a:hover, .pagination > .active > span, .pagination > .active > span:focus, .pagination > .active > span:hover {
+    z-index: 3;
+    color: #fff;
+    cursor: default;
+    background-color: #07752C;
+    border-color: #07752C;
+}
+
+.pagination > li > a:focus, .pagination > li > a:hover, .pagination > li > span:focus, .pagination > li > span:hover {
+    z-index: 2;
+    color: #07752C;
+    background-color: #eee;
+    border-color: #07752C;
+}
+
+.pagination > li > a, .pagination > li > span {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    color: #07752C;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #07752C;
+}

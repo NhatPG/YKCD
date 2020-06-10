@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.huecit.vn/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.huecit.vn/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.huecit.vn/">
+      <s:element name="GetVBDen">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="maPMLienThong" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ngayDenTuNgay" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="ngayDenDenNgay" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="tenTruyCap" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVBDenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVBDenResult" type="tns:ArrayOfVBDenDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfVBDenDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="VBDenDTO" nillable="true" type="tns:VBDenDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="VBDenDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MaVBDen" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SoDen" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaSoVB" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TenSoVB" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SoDenTheoSo" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="QPPL" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="SoKyHieu" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NgayDen" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NgayBanHanh" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaCapCoQuan" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TenCapCoQuan" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaCoQuan" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TenCoQuan" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaLoaiVB" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TenLoaiVB" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaLinhVuc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TenLinhVuc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaDoMat" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TenDoMat" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaDoKhan" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TenDoKhan" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="QuanTrong" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="TrichYeu" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GhiChu" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NguoiKy" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ChucVu" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DinhKem" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="FileDinhKems" type="tns:ArrayOfFileDinhKemDTO" />
+          <s:element minOccurs="1" maxOccurs="1" name="ThamQuyenVB" type="s:unsignedByte" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfFileDinhKemDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FileDinhKemDTO" nillable="true" type="tns:FileDinhKemDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FileDinhKemDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TenFileDinhKem" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DuLieu" type="s:base64Binary" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetVBDi">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="maPMLienThong" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ngayPHTuNgay" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="ngayPHDenNgay" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="tenTruyCap" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVBDiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVBDiResult" type="tns:ArrayOfVBDiDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfVBDiDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="VBDiDTO" nillable="true" type="tns:VBDiDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="VBDiDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MaVBDi" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SoDi" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaSoVB" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TenSoVB" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SoDiTheoSo" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="QPPL" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaKyHieu" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SoKyHieu" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NgayPhatHanh" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaCapCoQuan" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TenCapCoQuan" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaCoQuan" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TenCoQuan" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaLoaiVB" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TenLoaiVB" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaLinhVuc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TenLinhVuc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaDoMat" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TenDoMat" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaDoKhan" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TenDoKhan" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="QuanTrong" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="TrichYeu" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NguoiKy" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ChucVu" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NguoiVaoSo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NguoiSoanThao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GhiChu" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SoBan" type="s:unsignedByte" />
+          <s:element minOccurs="1" maxOccurs="1" name="VBYKCD" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="DinhKem" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="FileDinhKems" type="tns:ArrayOfFileDinhKemDTO" />
+          <s:element minOccurs="0" maxOccurs="1" name="FileDinhKemLienQuans" type="tns:ArrayOfFileDinhKemDTO" />
+          <s:element minOccurs="0" maxOccurs="1" name="CoQuanNhans" type="tns:ArrayOfCoQuanDTO" />
+          <s:element minOccurs="0" maxOccurs="1" name="ToChucKhac" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SaoY" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="VBDens" type="tns:ArrayOfVBDenDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCoQuanDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CoQuanDTO" nillable="true" type="tns:CoQuanDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CoQuanDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaCapCoQuan" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TenCoQuan" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DiaChiNhanVB" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VietTat" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="STT" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TrangThai" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsServer" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsGeneral" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsDenDi" type="s:unsignedByte" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaDinhDanh" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetVBDiHasIdeaLeader">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ngayPHTuNgay" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="ngayPHDenNgay" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVBDiHasIdeaLeaderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVBDiHasIdeaLeaderResult" type="tns:ArrayOfVBDiDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVBDiByDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ngayPHTuNgay" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="ngayPHDenNgay" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVBDiByDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVBDiByDateResult" type="tns:ArrayOfVBDiDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVBDiByIDs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IDs" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetVBDiByIDsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVBDiByIDsResult" type="tns:ArrayOfVBDiDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVBDenByIDs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IDs" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVBDenByIDsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVBDenByIDsResult" type="tns:ArrayOfVBDenDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVBDenByDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ngayDenTuNgay" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="ngayDenDenNgay" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVBDenByDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVBDenByDateResult" type="tns:ArrayOfVBDenDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetThongtinSudungPM">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="day" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="month" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="year" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetThongtinSudungPMResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetThongtinSudungPMResult" type="tns:BaoCaoSuDungDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="BaoCaoSuDungDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaCoQuan" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaCapCoQuan" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Nam" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Thang" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SoVBVaoSo" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SoVBVaoSoFDK" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SoVBPhatHanh" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SoVBPhatHanhFDK" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SoVBPhatHanhCoLienThong" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SoVBGuiQuaMang" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SoVBGuiQuaMangFDK" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SoVBTieuChi1" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SoVBTieuChi2" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SoVBTieuChi3" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SoVBTieuChi4" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SoVBTieuChi5" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SoVBTieuChi6" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="NgayBaoCao" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetVBDenSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVBDen" />
+  </wsdl:message>
+  <wsdl:message name="GetVBDenSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVBDenResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVBDiSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVBDi" />
+  </wsdl:message>
+  <wsdl:message name="GetVBDiSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVBDiResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVBDiHasIdeaLeaderSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVBDiHasIdeaLeader" />
+  </wsdl:message>
+  <wsdl:message name="GetVBDiHasIdeaLeaderSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVBDiHasIdeaLeaderResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVBDiByDateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVBDiByDate" />
+  </wsdl:message>
+  <wsdl:message name="GetVBDiByDateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVBDiByDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVBDiByIDsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVBDiByIDs" />
+  </wsdl:message>
+  <wsdl:message name="GetVBDiByIDsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVBDiByIDsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVBDenByIDsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVBDenByIDs" />
+  </wsdl:message>
+  <wsdl:message name="GetVBDenByIDsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVBDenByIDsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVBDenByDateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVBDenByDate" />
+  </wsdl:message>
+  <wsdl:message name="GetVBDenByDateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVBDenByDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetThongtinSudungPMSoapIn">
+    <wsdl:part name="parameters" element="tns:GetThongtinSudungPM" />
+  </wsdl:message>
+  <wsdl:message name="GetThongtinSudungPMSoapOut">
+    <wsdl:part name="parameters" element="tns:GetThongtinSudungPMResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ExchangeDocServiceSoap">
+    <wsdl:operation name="GetVBDen">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Trả về danh sách các văn bản đến được đánh dấu liên thông với phần mềm có mã số PhanMemLienThong và có ngày đến trong khoản thời gian.(mm/dd/yyyy)</wsdl:documentation>
+      <wsdl:input message="tns:GetVBDenSoapIn" />
+      <wsdl:output message="tns:GetVBDenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVBDi">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Trả về danh sách các văn bản đi được đánh dấu liên thông với phần mềm có mã số PhanMemLienThong và có ngày phát hành trong khoản thời gian.(mm/dd/yyyy)</wsdl:documentation>
+      <wsdl:input message="tns:GetVBDiSoapIn" />
+      <wsdl:output message="tns:GetVBDiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVBDiHasIdeaLeader">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Trả về danh sách các văn bản đi có ý kiến chỉ đạo  và có ngày phát hành trong khoản thời gian.(mm/dd/yyyy)</wsdl:documentation>
+      <wsdl:input message="tns:GetVBDiHasIdeaLeaderSoapIn" />
+      <wsdl:output message="tns:GetVBDiHasIdeaLeaderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVBDiByDate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Trả về danh sách các văn bản đi có ngày phát hành trong khoản thời gian.(mm/dd/yyyy)</wsdl:documentation>
+      <wsdl:input message="tns:GetVBDiByDateSoapIn" />
+      <wsdl:output message="tns:GetVBDiByDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVBDiByIDs">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Trả về danh sách các văn bản đi theo ma văn bản</wsdl:documentation>
+      <wsdl:input message="tns:GetVBDiByIDsSoapIn" />
+      <wsdl:output message="tns:GetVBDiByIDsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVBDenByIDs">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Trả về danh sách các văn bản đến theo mã văn bản</wsdl:documentation>
+      <wsdl:input message="tns:GetVBDenByIDsSoapIn" />
+      <wsdl:output message="tns:GetVBDenByIDsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVBDenByDate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Trả về danh sách các văn bản đến có ngày ban hành trong khoản thời gian.(mm/dd/yyyy)</wsdl:documentation>
+      <wsdl:input message="tns:GetVBDenByDateSoapIn" />
+      <wsdl:output message="tns:GetVBDenByDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetThongtinSudungPM">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Trả về thông tin sử dụng theo thang va nam</wsdl:documentation>
+      <wsdl:input message="tns:GetThongtinSudungPMSoapIn" />
+      <wsdl:output message="tns:GetThongtinSudungPMSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ExchangeDocServiceSoap" type="tns:ExchangeDocServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetVBDen">
+      <soap:operation soapAction="http://www.huecit.vn/GetVBDen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVBDi">
+      <soap:operation soapAction="http://www.huecit.vn/GetVBDi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVBDiHasIdeaLeader">
+      <soap:operation soapAction="http://www.huecit.vn/GetVBDiHasIdeaLeader" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVBDiByDate">
+      <soap:operation soapAction="http://www.huecit.vn/GetVBDiByDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVBDiByIDs">
+      <soap:operation soapAction="http://www.huecit.vn/GetVBDiByIDs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVBDenByIDs">
+      <soap:operation soapAction="http://www.huecit.vn/GetVBDenByIDs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVBDenByDate">
+      <soap:operation soapAction="http://www.huecit.vn/GetVBDenByDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetThongtinSudungPM">
+      <soap:operation soapAction="http://www.huecit.vn/GetThongtinSudungPM" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ExchangeDocServiceSoap12" type="tns:ExchangeDocServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetVBDen">
+      <soap12:operation soapAction="http://www.huecit.vn/GetVBDen" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVBDi">
+      <soap12:operation soapAction="http://www.huecit.vn/GetVBDi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVBDiHasIdeaLeader">
+      <soap12:operation soapAction="http://www.huecit.vn/GetVBDiHasIdeaLeader" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVBDiByDate">
+      <soap12:operation soapAction="http://www.huecit.vn/GetVBDiByDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVBDiByIDs">
+      <soap12:operation soapAction="http://www.huecit.vn/GetVBDiByIDs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVBDenByIDs">
+      <soap12:operation soapAction="http://www.huecit.vn/GetVBDenByIDs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVBDenByDate">
+      <soap12:operation soapAction="http://www.huecit.vn/GetVBDenByDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetThongtinSudungPM">
+      <soap12:operation soapAction="http://www.huecit.vn/GetThongtinSudungPM" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ExchangeDocService">
+    <wsdl:port name="ExchangeDocServiceSoap" binding="tns:ExchangeDocServiceSoap">
+      <soap:address location="http://hscv.ubnd.thuathienhue.egov.vn/ExchangeDocService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ExchangeDocServiceSoap12" binding="tns:ExchangeDocServiceSoap12">
+      <soap12:address location="http://hscv.ubnd.thuathienhue.egov.vn/ExchangeDocService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

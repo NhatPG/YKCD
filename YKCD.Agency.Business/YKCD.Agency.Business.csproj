@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0F0D16F6-7361-4770-9A20-F3DAE5F1D373}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YKCD.Agency.Business</RootNamespace>
+    <AssemblyName>YKCD.Agency.Business</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.5\lib\net40-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PetaPoco, Version=5.1.244.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PetaPoco.Core.Compiled.5.1.244\lib\net45\PetaPoco.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Components\Cachings.cs" />
+    <Compile Include="Components\ProvinceServiceHelper.cs" />
+    <Compile Include="Components\SoLieuThongKe.cs" />
+    <Compile Include="Components\TrangThai.cs" />
+    <Compile Include="Components\UserRole.cs" />
+    <Compile Include="Components\XmlSerializerClass.cs" />
+    <Compile Include="Entities\Sms.cs" />
+    <Compile Include="EntityBase\DepartmentBase.cs" />
+    <Compile Include="EntityBase\DepartmentGroupBase.cs" />
+    <Compile Include="Entities\DepartmentGroup.cs" />
+    <Compile Include="Entities\Department.cs" />
+    <Compile Include="Entities\DocumentCategory.cs" />
+    <Compile Include="Entities\DocumentFile.cs" />
+    <Compile Include="Entities\Document.cs" />
+    <Compile Include="Entities\EventLog.cs" />
+    <Compile Include="Entities\File.cs" />
+    <Compile Include="Entities\Holiday.cs" />
+    <Compile Include="Entities\Notification.cs" />
+    <Compile Include="Entities\Perform.cs" />
+    <Compile Include="Entities\ReportFile.cs" />
+    <Compile Include="Entities\Report.cs" />
+    <Compile Include="Entities\RequestFile.cs" />
+    <Compile Include="Entities\RequestLog.cs" />
+    <Compile Include="Entities\Request.cs" />
+    <Compile Include="Entities\ResponseFile.cs" />
+    <Compile Include="Entities\Response.cs" />
+    <Compile Include="Entities\Tracking.cs" />
+    <Compile Include="Entities\User.cs" />
+    <Compile Include="EntityBase\DocumentBase.cs" />
+    <Compile Include="EntityBase\DocumentCategoryBase.cs" />
+    <Compile Include="EntityBase\DocumentFileBase.cs" />
+    <Compile Include="EntityBase\FileBase.cs" />
+    <Compile Include="EntityBase\HolidayBase.cs" />
+    <Compile Include="EntityBase\NotificationBase.cs" />
+    <Compile Include="EntityBase\PerformBase.cs" />
+    <Compile Include="EntityBase\ReportBase.cs" />
+    <Compile Include="EntityBase\ReportFileBase.cs" />
+    <Compile Include="EntityBase\RequestBase.cs" />
+    <Compile Include="EntityBase\RequestFileBase.cs" />
+    <Compile Include="EntityBase\TrackingBase.cs" />
+    <Compile Include="EntityBase\UserBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\ProvinceService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Services\BaseServices.cs" />
+    <Compile Include="Services\CommonServices.cs" />
+    <Compile Include="Services\DepartmentGroupServices.cs" />
+    <Compile Include="Services\DepartmentServices.cs" />
+    <Compile Include="Services\DocumentCategoryServices.cs" />
+    <Compile Include="Services\DocumentFileServices.cs" />
+    <Compile Include="Services\DocumentServices.cs" />
+    <Compile Include="Services\FileServices.cs" />
+    <Compile Include="Services\HolidayServices.cs" />
+    <Compile Include="Services\NotificationServices.cs" />
+    <Compile Include="Services\PerformServices.cs" />
+    <Compile Include="Services\ReportFileServices.cs" />
+    <Compile Include="Services\ReportServices.cs" />
+    <Compile Include="Services\RequestServices.cs" />
+    <Compile Include="Services\SmsServices.cs" />
+    <Compile Include="Services\TrackingServices.cs" />
+    <Compile Include="Services\UserServices.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Framework\Framework.csproj">
+      <Project>{f3916b9b-23c5-4359-93b6-006877d0f67a}</Project>
+      <Name>Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ProvinceService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ProvinceService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ProvinceService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ProvinceService\ProvinceService1.wsdl" />
+    <None Include="Service References\ProvinceService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ProvinceService\ProvinceService1.disco" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

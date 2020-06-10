@@ -1,0 +1,880 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{00F30089-1978-4A34-B79F-FA7355D10C74}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YKCD.Province.Application</RootNamespace>
+    <AssemblyName>YKCD.Province.Application</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DotNet.Highcharts, Version=4.0.0.0, Culture=neutral, PublicKeyToken=88854f873df851bf, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNet.Highcharts.4.0\lib\DotNet.Highcharts.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetNuke, Version=7.2.1.367, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\DotNetNuke.dll</HintPath>
+    </Reference>
+    <Reference Include="EsbUsers.Sso, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\EsbUsers.Sso.dll</HintPath>
+    </Reference>
+    <Reference Include="Exceptionless, Version=4.0.1951.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Exceptionless.4.0.1951\lib\net45\Exceptionless.dll</HintPath>
+    </Reference>
+    <Reference Include="Exceptionless.Web, Version=4.0.1951.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Exceptionless.Web.4.0.1951\lib\net45\Exceptionless.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="GemBox.Document, Version=23.3.30.1260, Culture=neutral, PublicKeyToken=b1b72c69714d4847, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\GemBox.Document.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.7.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.7\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PetaPoco, Version=5.0.1.17400, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\PetaPoco.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\CauHinhHeThong.aspx" />
+    <Content Include="Admin\DonVi_DanhSach.aspx" />
+    <Content Include="Admin\DonVi_QuanLy.aspx" />
+    <Content Include="Admin\LoaiVanBan_DanhSach.aspx" />
+    <Content Include="Admin\LoaiVanBan_QuanLy.aspx" />
+    <Content Include="Admin\NgayNghi_DanhSach.aspx" />
+    <Content Include="Admin\NgayNghi_QuanLy.aspx" />
+    <Content Include="Admin\NguoiSuDung_DanhSach.aspx" />
+    <Content Include="Admin\NguoiSuDung_QuanLy.aspx" />
+    <Content Include="Admin\NhomDonVi_DanhSach.aspx" />
+    <Content Include="Admin\NhomDonVi_QuanLy.aspx" />
+    <Content Include="Admin\PhongBan_DanhSach.aspx" />
+    <Content Include="Admin\PhongBan_QuanLy.aspx" />
+    <Content Include="Controls\DanhSachBaoCaoControl.ascx" />
+    <Content Include="Controls\ThongTinVanBanControl.ascx" />
+    <Content Include="Controls\ThongTinYKienChiDaoControl.ascx" />
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\quochuy.png" />
+    <Content Include="MasterPages\Controls\Admin_FunctionControl.ascx" />
+    <Content Include="MasterPages\Controls\Admin_NarvBarControl.ascx" />
+    <Content Include="MasterPages\Controls\BannerControl.ascx" />
+    <Content Include="MasterPages\Controls\Province_FunctionControl.ascx" />
+    <Content Include="MasterPages\Controls\Province_NarvBarControl.ascx" />
+    <Content Include="MasterPages\Controls\Public_FunctionControl.ascx" />
+    <Content Include="MasterPages\Controls\Public_NavBarControl.ascx" />
+    <Content Include="Province\BangThongKe.aspx" />
+    <Content Include="Province\BaoCao_QuanLy.aspx" />
+    <Content Include="Province\DanhSachCuocHop.aspx" />
+    <Content Include="Province\DanhSachYKCD.aspx" />
+    <Content Include="Province\ThongKe_CapNhatVanBan.aspx" />
+    <Content Include="Province\ThongKe_KinhTeNganhKntc.aspx" />
+    <Content Include="Province\ThongKe_TheoChuyenVien.aspx" />
+    <Content Include="Province\ThongKe_TheoDonVi.aspx" />
+    <Content Include="Province\ThongKe_TheoLanhDao.aspx" />
+    <Content Include="Province\ThongTinVanBan.aspx" />
+    <Content Include="Province\ThongTinYKCD.aspx" />
+    <Content Include="Province\TimKiem.aspx" />
+    <Content Include="Province\VanBan_DanhSach.aspx" />
+    <Content Include="Province\VanBan_DongBo.aspx" />
+    <Content Include="Province\VanBan_QuanLy.aspx" />
+    <Content Include="Province\VanBan_ThongBaoKetLuan.aspx" />
+    <Content Include="Province\VanBan_TongHopBaoCao.aspx" />
+    <Content Include="Province\XacNhanHoanThanh.aspx" />
+    <Content Include="Province\YKCD_QuanLy.aspx" />
+    <Content Include="Public\DangNhap.aspx" />
+    <Content Include="Public\DangXuat.aspx" />
+    <Content Include="Public\DanhSachYKCD.aspx" />
+    <Content Include="Public\DoiMatKhau.aspx" />
+    <Content Include="Public\TaiFile.aspx" />
+    <Content Include="Public\ThongKe_DonVi.aspx" />
+    <Content Include="Public\ThongKe_NguoiKyVanBan.aspx" />
+    <Content Include="Public\ThongKe_NguoiTheoDoi.aspx" />
+    <Content Include="Public\ThongKe_NhomDonVi.aspx" />
+    <Content Include="Public\ThongTinVanBan.aspx" />
+    <Content Include="Public\ThongTinYKCD.aspx" />
+    <Content Include="Public\TimKiem.aspx" />
+    <Content Include="Public\VanBan_DanhSach.aspx" />
+    <Content Include="Scripts\bootbox.min.js" />
+    <Content Include="Scripts\bootstrap-datepicker.min.js" />
+    <Content Include="Scripts\bootstrap-datepicker.vi.min.js" />
+    <Content Include="Scripts\bootstrap-file-upload.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\bootstrapValidator.min.js" />
+    <Content Include="Scripts\common.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\adapters\standalone-framework.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\adapters\standalone-framework.src.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\highcharts-3d.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\highcharts-3d.src.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\highcharts-all.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\highcharts-more.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\highcharts-more.src.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\highcharts.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\highcharts.src.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\canvas-tools.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\canvas-tools.src.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\data.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\data.src.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\drilldown.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\drilldown.src.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\exporting.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\exporting.src.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\funnel.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\funnel.src.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\heatmap.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\heatmap.src.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\no-data-to-display.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\no-data-to-display.src.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\solid-gauge.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\solid-gauge.src.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\themes\dark-blue.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\themes\dark-green.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\themes\dark-unica.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\themes\gray.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\themes\grid-light.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\themes\grid.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\themes\sand-signika.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\themes\skies.js" />
+    <Content Include="Scripts\Highcharts\js\adapters\standalone-framework.js" />
+    <Content Include="Scripts\Highcharts\js\adapters\standalone-framework.src.js" />
+    <Content Include="Scripts\Highcharts\js\highcharts-3d.js" />
+    <Content Include="Scripts\Highcharts\js\highcharts-3d.src.js" />
+    <Content Include="Scripts\Highcharts\js\highcharts-all.js" />
+    <Content Include="Scripts\Highcharts\js\highcharts-more.js" />
+    <Content Include="Scripts\Highcharts\js\highcharts-more.src.js" />
+    <Content Include="Scripts\Highcharts\js\highcharts.js" />
+    <Content Include="Scripts\Highcharts\js\highcharts.src.js" />
+    <Content Include="Scripts\Highcharts\js\modules\canvas-tools.js" />
+    <Content Include="Scripts\Highcharts\js\modules\canvas-tools.src.js" />
+    <Content Include="Scripts\Highcharts\js\modules\data.js" />
+    <Content Include="Scripts\Highcharts\js\modules\data.src.js" />
+    <Content Include="Scripts\Highcharts\js\modules\drilldown.js" />
+    <Content Include="Scripts\Highcharts\js\modules\drilldown.src.js" />
+    <Content Include="Scripts\Highcharts\js\modules\exporting.js" />
+    <Content Include="Scripts\Highcharts\js\modules\exporting.src.js" />
+    <Content Include="Scripts\Highcharts\js\modules\funnel.js" />
+    <Content Include="Scripts\Highcharts\js\modules\funnel.src.js" />
+    <Content Include="Scripts\Highcharts\js\modules\heatmap.js" />
+    <Content Include="Scripts\Highcharts\js\modules\heatmap.src.js" />
+    <Content Include="Scripts\Highcharts\js\modules\no-data-to-display.js" />
+    <Content Include="Scripts\Highcharts\js\modules\no-data-to-display.src.js" />
+    <Content Include="Scripts\Highcharts\js\modules\solid-gauge.js" />
+    <Content Include="Scripts\Highcharts\js\modules\solid-gauge.src.js" />
+    <Content Include="Scripts\Highcharts\js\themes\dark-blue.js" />
+    <Content Include="Scripts\Highcharts\js\themes\dark-green.js" />
+    <Content Include="Scripts\Highcharts\js\themes\dark-unica.js" />
+    <Content Include="Scripts\Highcharts\js\themes\gray.js" />
+    <Content Include="Scripts\Highcharts\js\themes\grid-light.js" />
+    <Content Include="Scripts\Highcharts\js\themes\grid.js" />
+    <Content Include="Scripts\Highcharts\js\themes\sand-signika.js" />
+    <Content Include="Scripts\Highcharts\js\themes\skies.js" />
+    <Content Include="Scripts\highcharts-basic.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\metisMenu.min.js" />
+    <Content Include="Scripts\multimodal.min.js" />
+    <Content Include="Scripts\sb-admin-2.min.js" />
+    <Content Include="Scripts\select2.min.js" />
+    <Content Include="MasterPages\Admin.Master" />
+    <Content Include="packages.config" />
+    <Content Include="tinymce\jquery.tinymce.min.js" />
+    <Content Include="tinymce\license.txt" />
+    <Content Include="tinymce\plugins\advlist\plugin.min.js" />
+    <Content Include="tinymce\plugins\anchor\plugin.min.js" />
+    <Content Include="tinymce\plugins\autolink\plugin.min.js" />
+    <Content Include="tinymce\plugins\autoresize\plugin.min.js" />
+    <Content Include="tinymce\plugins\autosave\plugin.min.js" />
+    <Content Include="tinymce\plugins\bbcode\plugin.min.js" />
+    <Content Include="tinymce\plugins\charmap\plugin.min.js" />
+    <Content Include="tinymce\plugins\codesample\css\prism.css" />
+    <Content Include="tinymce\plugins\codesample\plugin.min.js" />
+    <Content Include="tinymce\plugins\code\plugin.min.js" />
+    <Content Include="tinymce\plugins\colorpicker\plugin.min.js" />
+    <Content Include="tinymce\plugins\contextmenu\plugin.min.js" />
+    <Content Include="tinymce\plugins\directionality\plugin.min.js" />
+    <Content Include="tinymce\plugins\emoticons\img\smiley-cool.gif" />
+    <Content Include="tinymce\plugins\emoticons\img\smiley-cry.gif" />
+    <Content Include="tinymce\plugins\emoticons\img\smiley-embarassed.gif" />
+    <Content Include="tinymce\plugins\emoticons\img\smiley-foot-in-mouth.gif" />
+    <Content Include="tinymce\plugins\emoticons\img\smiley-frown.gif" />
+    <Content Include="tinymce\plugins\emoticons\img\smiley-innocent.gif" />
+    <Content Include="tinymce\plugins\emoticons\img\smiley-kiss.gif" />
+    <Content Include="tinymce\plugins\emoticons\img\smiley-laughing.gif" />
+    <Content Include="tinymce\plugins\emoticons\img\smiley-money-mouth.gif" />
+    <Content Include="tinymce\plugins\emoticons\img\smiley-sealed.gif" />
+    <Content Include="tinymce\plugins\emoticons\img\smiley-smile.gif" />
+    <Content Include="tinymce\plugins\emoticons\img\smiley-surprised.gif" />
+    <Content Include="tinymce\plugins\emoticons\img\smiley-tongue-out.gif" />
+    <Content Include="tinymce\plugins\emoticons\img\smiley-undecided.gif" />
+    <Content Include="tinymce\plugins\emoticons\img\smiley-wink.gif" />
+    <Content Include="tinymce\plugins\emoticons\img\smiley-yell.gif" />
+    <Content Include="tinymce\plugins\emoticons\plugin.min.js" />
+    <Content Include="tinymce\plugins\example\dialog.html" />
+    <Content Include="tinymce\plugins\example\plugin.min.js" />
+    <Content Include="tinymce\plugins\example_dependency\plugin.min.js" />
+    <Content Include="tinymce\plugins\fullpage\plugin.min.js" />
+    <Content Include="tinymce\plugins\fullscreen\plugin.min.js" />
+    <Content Include="tinymce\plugins\hr\plugin.min.js" />
+    <Content Include="tinymce\plugins\imagetools\plugin.min.js" />
+    <Content Include="tinymce\plugins\image\plugin.min.js" />
+    <Content Include="tinymce\plugins\importcss\plugin.min.js" />
+    <Content Include="tinymce\plugins\insertdatetime\plugin.min.js" />
+    <Content Include="tinymce\plugins\layer\plugin.min.js" />
+    <Content Include="tinymce\plugins\legacyoutput\plugin.min.js" />
+    <Content Include="tinymce\plugins\link\plugin.min.js" />
+    <Content Include="tinymce\plugins\lists\plugin.min.js" />
+    <Content Include="tinymce\plugins\media\moxieplayer.swf" />
+    <Content Include="tinymce\plugins\media\plugin.min.js" />
+    <Content Include="tinymce\plugins\nonbreaking\plugin.min.js" />
+    <Content Include="tinymce\plugins\noneditable\plugin.min.js" />
+    <Content Include="tinymce\plugins\pagebreak\plugin.min.js" />
+    <Content Include="tinymce\plugins\paste\plugin.min.js" />
+    <Content Include="tinymce\plugins\preview\plugin.min.js" />
+    <Content Include="tinymce\plugins\print\plugin.min.js" />
+    <Content Include="tinymce\plugins\save\plugin.min.js" />
+    <Content Include="tinymce\plugins\searchreplace\plugin.min.js" />
+    <Content Include="tinymce\plugins\spellchecker\plugin.min.js" />
+    <Content Include="tinymce\plugins\tabfocus\plugin.min.js" />
+    <Content Include="tinymce\plugins\table\plugin.min.js" />
+    <Content Include="tinymce\plugins\template\plugin.min.js" />
+    <Content Include="tinymce\plugins\textcolor\plugin.min.js" />
+    <Content Include="tinymce\plugins\textpattern\plugin.min.js" />
+    <Content Include="tinymce\plugins\visualblocks\css\visualblocks.css" />
+    <Content Include="tinymce\plugins\visualblocks\plugin.min.js" />
+    <Content Include="tinymce\plugins\visualchars\plugin.min.js" />
+    <Content Include="tinymce\plugins\wordcount\plugin.min.js" />
+    <Content Include="tinymce\skins\lightgray\content.inline.min.css" />
+    <Content Include="tinymce\skins\lightgray\content.min.css" />
+    <Content Include="tinymce\skins\lightgray\fonts\tinymce-small.svg" />
+    <Content Include="tinymce\skins\lightgray\fonts\tinymce.svg" />
+    <Content Include="tinymce\skins\lightgray\img\anchor.gif" />
+    <Content Include="tinymce\skins\lightgray\img\loader.gif" />
+    <Content Include="tinymce\skins\lightgray\img\object.gif" />
+    <Content Include="tinymce\skins\lightgray\img\trans.gif" />
+    <Content Include="tinymce\skins\lightgray\skin.ie7.min.css" />
+    <Content Include="tinymce\skins\lightgray\skin.min.css" />
+    <Content Include="tinymce\themes\modern\theme.min.js" />
+    <Content Include="tinymce\tinymce.min.js" />
+    <Content Include="WebServices\PortalServices.asmx" />
+    <None Include="Properties\PublishProfiles\YKCD.pubxml" />
+    <None Include="Service References\HscvService\ExchangeDocService.disco" />
+    <None Include="Service References\HscvService\configuration91.svcinfo" />
+    <None Include="Service References\HscvService\configuration.svcinfo" />
+    <None Include="Service References\HscvService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\SmsService\smsBrandname.disco" />
+    <None Include="Service References\SmsService\configuration91.svcinfo" />
+    <None Include="Service References\SmsService\configuration.svcinfo" />
+    <None Include="Service References\SmsService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Services\PortalService.asmx" />
+    <Content Include="Services\ProvinceService.asmx" />
+    <Content Include="Styles\awesome-bootstrap-checkbox.css" />
+    <Content Include="Styles\bootstrap-datepicker.min.css" />
+    <Content Include="Styles\bootstrap-file-upload.css" />
+    <Content Include="Styles\bootstrap-select.min.css" />
+    <Content Include="Styles\bootstrap.min.css" />
+    <Content Include="Styles\common.css" />
+    <Content Include="Styles\fileinput.min.css" />
+    <Content Include="Styles\font-awesome.min.css" />
+    <Content Include="Styles\metisMenu.min.css" />
+    <Content Include="Styles\panel-with-tabs.css" />
+    <Content Include="Styles\sb-admin-2-fix.css" />
+    <Content Include="Styles\sb-admin-2.min.css" />
+    <Content Include="Styles\select2.min.css" />
+    <Content Include="Styles\skin-green.css" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\CauHinhHeThong.aspx.cs">
+      <DependentUpon>CauHinhHeThong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CauHinhHeThong.aspx.designer.cs">
+      <DependentUpon>CauHinhHeThong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DonVi_DanhSach.aspx.cs">
+      <DependentUpon>DonVi_DanhSach.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DonVi_DanhSach.aspx.designer.cs">
+      <DependentUpon>DonVi_DanhSach.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DonVi_QuanLy.aspx.cs">
+      <DependentUpon>DonVi_QuanLy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DonVi_QuanLy.aspx.designer.cs">
+      <DependentUpon>DonVi_QuanLy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\LoaiVanBan_DanhSach.aspx.cs">
+      <DependentUpon>LoaiVanBan_DanhSach.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\LoaiVanBan_DanhSach.aspx.designer.cs">
+      <DependentUpon>LoaiVanBan_DanhSach.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\LoaiVanBan_QuanLy.aspx.cs">
+      <DependentUpon>LoaiVanBan_QuanLy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\LoaiVanBan_QuanLy.aspx.designer.cs">
+      <DependentUpon>LoaiVanBan_QuanLy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\NgayNghi_DanhSach.aspx.cs">
+      <DependentUpon>NgayNghi_DanhSach.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\NgayNghi_DanhSach.aspx.designer.cs">
+      <DependentUpon>NgayNghi_DanhSach.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\NgayNghi_QuanLy.aspx.cs">
+      <DependentUpon>NgayNghi_QuanLy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\NgayNghi_QuanLy.aspx.designer.cs">
+      <DependentUpon>NgayNghi_QuanLy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\NguoiSuDung_DanhSach.aspx.cs">
+      <DependentUpon>NguoiSuDung_DanhSach.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\NguoiSuDung_DanhSach.aspx.designer.cs">
+      <DependentUpon>NguoiSuDung_DanhSach.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\NguoiSuDung_QuanLy.aspx.cs">
+      <DependentUpon>NguoiSuDung_QuanLy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\NguoiSuDung_QuanLy.aspx.designer.cs">
+      <DependentUpon>NguoiSuDung_QuanLy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\NhomDonVi_DanhSach.aspx.cs">
+      <DependentUpon>NhomDonVi_DanhSach.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\NhomDonVi_DanhSach.aspx.designer.cs">
+      <DependentUpon>NhomDonVi_DanhSach.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\NhomDonVi_QuanLy.aspx.cs">
+      <DependentUpon>NhomDonVi_QuanLy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\NhomDonVi_QuanLy.aspx.designer.cs">
+      <DependentUpon>NhomDonVi_QuanLy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PhongBan_DanhSach.aspx.cs">
+      <DependentUpon>PhongBan_DanhSach.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PhongBan_DanhSach.aspx.designer.cs">
+      <DependentUpon>PhongBan_DanhSach.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PhongBan_QuanLy.aspx.cs">
+      <DependentUpon>PhongBan_QuanLy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PhongBan_QuanLy.aspx.designer.cs">
+      <DependentUpon>PhongBan_QuanLy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DanhSachBaoCaoControl.ascx.cs">
+      <DependentUpon>DanhSachBaoCaoControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\DanhSachBaoCaoControl.ascx.designer.cs">
+      <DependentUpon>DanhSachBaoCaoControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ThongTinVanBanControl.ascx.cs">
+      <DependentUpon>ThongTinVanBanControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ThongTinVanBanControl.ascx.designer.cs">
+      <DependentUpon>ThongTinVanBanControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ThongTinYKienChiDaoControl.ascx.cs">
+      <DependentUpon>ThongTinYKienChiDaoControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ThongTinYKienChiDaoControl.ascx.designer.cs">
+      <DependentUpon>ThongTinYKienChiDaoControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\AppSettings.cs" />
+    <Compile Include="Helper\Authenticator.cs" />
+    <Compile Include="Helper\Parameters.cs" />
+    <Compile Include="Helper\Sessions.cs" />
+    <Compile Include="Helper\ViewNames.cs" />
+    <Compile Include="MasterPages\Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPages\Controls\Admin_FunctionControl.ascx.cs">
+      <DependentUpon>Admin_FunctionControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\Controls\Admin_FunctionControl.ascx.designer.cs">
+      <DependentUpon>Admin_FunctionControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPages\Controls\Admin_NarvBarControl.ascx.cs">
+      <DependentUpon>Admin_NarvBarControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\Controls\Admin_NarvBarControl.ascx.designer.cs">
+      <DependentUpon>Admin_NarvBarControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPages\Controls\BannerControl.ascx.cs">
+      <DependentUpon>BannerControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\Controls\BannerControl.ascx.designer.cs">
+      <DependentUpon>BannerControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPages\Controls\Province_FunctionControl.ascx.cs">
+      <DependentUpon>Province_FunctionControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\Controls\Province_FunctionControl.ascx.designer.cs">
+      <DependentUpon>Province_FunctionControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPages\Controls\Province_NarvBarControl.ascx.cs">
+      <DependentUpon>Province_NarvBarControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\Controls\Province_NarvBarControl.ascx.designer.cs">
+      <DependentUpon>Province_NarvBarControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPages\Controls\Public_FunctionControl.ascx.cs">
+      <DependentUpon>Public_FunctionControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\Controls\Public_FunctionControl.ascx.designer.cs">
+      <DependentUpon>Public_FunctionControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPages\Controls\Public_NavBarControl.ascx.cs">
+      <DependentUpon>Public_NavBarControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\Controls\Public_NavBarControl.ascx.designer.cs">
+      <DependentUpon>Public_NavBarControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPages\Province.Master.cs">
+      <DependentUpon>Province.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\Province.Master.designer.cs">
+      <DependentUpon>Province.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPages\Public.Master.cs">
+      <DependentUpon>Public.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\Public.Master.designer.cs">
+      <DependentUpon>Public.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Province\BangThongKe.aspx.cs">
+      <DependentUpon>BangThongKe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Province\BangThongKe.aspx.designer.cs">
+      <DependentUpon>BangThongKe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Province\BaoCao_QuanLy.aspx.cs">
+      <DependentUpon>BaoCao_QuanLy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Province\BaoCao_QuanLy.aspx.designer.cs">
+      <DependentUpon>BaoCao_QuanLy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Province\DanhSachCuocHop.aspx.cs">
+      <DependentUpon>DanhSachCuocHop.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Province\DanhSachCuocHop.aspx.designer.cs">
+      <DependentUpon>DanhSachCuocHop.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Province\DanhSachYKCD.aspx.cs">
+      <DependentUpon>DanhSachYKCD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Province\DanhSachYKCD.aspx.designer.cs">
+      <DependentUpon>DanhSachYKCD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Province\ThongKe_CapNhatVanBan.aspx.cs">
+      <DependentUpon>ThongKe_CapNhatVanBan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Province\ThongKe_CapNhatVanBan.aspx.designer.cs">
+      <DependentUpon>ThongKe_CapNhatVanBan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Province\ThongKe_KinhTeNganhKntc.aspx.cs">
+      <DependentUpon>ThongKe_KinhTeNganhKntc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Province\ThongKe_KinhTeNganhKntc.aspx.designer.cs">
+      <DependentUpon>ThongKe_KinhTeNganhKntc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Province\ThongKe_TheoChuyenVien.aspx.cs">
+      <DependentUpon>ThongKe_TheoChuyenVien.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Province\ThongKe_TheoChuyenVien.aspx.designer.cs">
+      <DependentUpon>ThongKe_TheoChuyenVien.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Province\ThongKe_TheoDonVi.aspx.cs">
+      <DependentUpon>ThongKe_TheoDonVi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Province\ThongKe_TheoDonVi.aspx.designer.cs">
+      <DependentUpon>ThongKe_TheoDonVi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Province\ThongKe_TheoLanhDao.aspx.cs">
+      <DependentUpon>ThongKe_TheoLanhDao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Province\ThongKe_TheoLanhDao.aspx.designer.cs">
+      <DependentUpon>ThongKe_TheoLanhDao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Province\ThongTinVanBan.aspx.cs">
+      <DependentUpon>ThongTinVanBan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Province\ThongTinVanBan.aspx.designer.cs">
+      <DependentUpon>ThongTinVanBan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Province\ThongTinYKCD.aspx.cs">
+      <DependentUpon>ThongTinYKCD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Province\ThongTinYKCD.aspx.designer.cs">
+      <DependentUpon>ThongTinYKCD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Province\TimKiem.aspx.cs">
+      <DependentUpon>TimKiem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Province\TimKiem.aspx.designer.cs">
+      <DependentUpon>TimKiem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Province\VanBan_DanhSach.aspx.cs">
+      <DependentUpon>VanBan_DanhSach.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Province\VanBan_DanhSach.aspx.designer.cs">
+      <DependentUpon>VanBan_DanhSach.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Province\VanBan_DongBo.aspx.cs">
+      <DependentUpon>VanBan_DongBo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Province\VanBan_DongBo.aspx.designer.cs">
+      <DependentUpon>VanBan_DongBo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Province\VanBan_QuanLy.aspx.cs">
+      <DependentUpon>VanBan_QuanLy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Province\VanBan_QuanLy.aspx.designer.cs">
+      <DependentUpon>VanBan_QuanLy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Province\VanBan_ThongBaoKetLuan.aspx.cs">
+      <DependentUpon>VanBan_ThongBaoKetLuan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Province\VanBan_ThongBaoKetLuan.aspx.designer.cs">
+      <DependentUpon>VanBan_ThongBaoKetLuan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Province\VanBan_TongHopBaoCao.aspx.cs">
+      <DependentUpon>VanBan_TongHopBaoCao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Province\VanBan_TongHopBaoCao.aspx.designer.cs">
+      <DependentUpon>VanBan_TongHopBaoCao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Province\XacNhanHoanThanh.aspx.cs">
+      <DependentUpon>XacNhanHoanThanh.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Province\XacNhanHoanThanh.aspx.designer.cs">
+      <DependentUpon>XacNhanHoanThanh.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Province\YKCD_QuanLy.aspx.cs">
+      <DependentUpon>YKCD_QuanLy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Province\YKCD_QuanLy.aspx.designer.cs">
+      <DependentUpon>YKCD_QuanLy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Public\DangNhap.aspx.cs">
+      <DependentUpon>DangNhap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\DangNhap.aspx.designer.cs">
+      <DependentUpon>DangNhap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Public\DangXuat.aspx.cs">
+      <DependentUpon>DangXuat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\DangXuat.aspx.designer.cs">
+      <DependentUpon>DangXuat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Public\DanhSachYKCD.aspx.cs">
+      <DependentUpon>DanhSachYKCD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\DanhSachYKCD.aspx.designer.cs">
+      <DependentUpon>DanhSachYKCD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Public\DoiMatKhau.aspx.cs">
+      <DependentUpon>DoiMatKhau.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\DoiMatKhau.aspx.designer.cs">
+      <DependentUpon>DoiMatKhau.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Public\TaiFile.aspx.cs">
+      <DependentUpon>TaiFile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\TaiFile.aspx.designer.cs">
+      <DependentUpon>TaiFile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Public\ThongKe_DonVi.aspx.cs">
+      <DependentUpon>ThongKe_DonVi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\ThongKe_DonVi.aspx.designer.cs">
+      <DependentUpon>ThongKe_DonVi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Public\ThongKe_NguoiKyVanBan.aspx.cs">
+      <DependentUpon>ThongKe_NguoiKyVanBan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\ThongKe_NguoiKyVanBan.aspx.designer.cs">
+      <DependentUpon>ThongKe_NguoiKyVanBan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Public\ThongKe_NguoiTheoDoi.aspx.cs">
+      <DependentUpon>ThongKe_NguoiTheoDoi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\ThongKe_NguoiTheoDoi.aspx.designer.cs">
+      <DependentUpon>ThongKe_NguoiTheoDoi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Public\ThongKe_NhomDonVi.aspx.cs">
+      <DependentUpon>ThongKe_NhomDonVi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\ThongKe_NhomDonVi.aspx.designer.cs">
+      <DependentUpon>ThongKe_NhomDonVi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Public\ThongTinVanBan.aspx.cs">
+      <DependentUpon>ThongTinVanBan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\ThongTinVanBan.aspx.designer.cs">
+      <DependentUpon>ThongTinVanBan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Public\ThongTinYKCD.aspx.cs">
+      <DependentUpon>ThongTinYKCD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\ThongTinYKCD.aspx.designer.cs">
+      <DependentUpon>ThongTinYKCD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Public\TimKiem.aspx.cs">
+      <DependentUpon>TimKiem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\TimKiem.aspx.designer.cs">
+      <DependentUpon>TimKiem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Public\VanBan_DanhSach.aspx.cs">
+      <DependentUpon>VanBan_DanhSach.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\VanBan_DanhSach.aspx.designer.cs">
+      <DependentUpon>VanBan_DanhSach.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\HscvService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SmsService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Services\PortalService.asmx.cs">
+      <DependentUpon>PortalService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Services\ProvinceService.asmx.cs">
+      <DependentUpon>ProvinceService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServices\PortalServices.asmx.cs">
+      <DependentUpon>PortalServices.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MasterPages\Public.Master" />
+    <Content Include="MasterPages\Province.Master" />
+    <None Include="Service References\HscvService\ExchangeDocService.wsdl" />
+    <Content Include="Service References\HscvService\YKCD.Province.Application.HscvService.BaoCaoSuDungDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\HscvService\YKCD.Province.Application.HscvService.VBDenDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\HscvService\YKCD.Province.Application.HscvService.VBDiDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\SmsService\smsBrandname.wsdl" />
+    <Content Include="Service References\SmsService\YKCD.Province.Application.SmsService.ArrayOfString.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="tinymce\langs\readme.md" />
+    <Content Include="tinymce\skins\lightgray\fonts\tinymce-small.eot" />
+    <Content Include="tinymce\skins\lightgray\fonts\tinymce-small.ttf" />
+    <Content Include="tinymce\skins\lightgray\fonts\tinymce-small.woff" />
+    <Content Include="tinymce\skins\lightgray\fonts\tinymce.eot" />
+    <Content Include="tinymce\skins\lightgray\fonts\tinymce.ttf" />
+    <Content Include="tinymce\skins\lightgray\fonts\tinymce.woff" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Framework\Framework.csproj">
+      <Project>{f3916b9b-23c5-4359-93b6-006877d0f67a}</Project>
+      <Name>Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YKCD.Province.Business\YKCD.Province.Business.csproj">
+      <Project>{0b279032-1999-47d3-883b-57700cff4215}</Project>
+      <Name>YKCD.Province.Business</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\HscvService\" />
+    <WCFMetadataStorage Include="Service References\SmsService\" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50370</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50370/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,102 @@
+2017-02-15 14:53:38,416 [9] ERROR /Agency/BaoCao_QuanLy.aspx?pid=2799 - System.InvalidOperationException: Sequence contains no matching element
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source, Func`2 predicate)
+   at YKCD.Agency.Application.Agency.BaoCao_QuanLy.SetDefaultValueOnCreate() in D:\Source\YKCD\Ykcd.Agency.Application\Agency\BaoCao_QuanLy.aspx.cs:line 61
+   at Framework.Web.ManagePageBase.Page_Load(Object sender, EventArgs e) in D:\Source\YKCD\Framework\Web\ManagePageBase.cs:line 41
+2017-02-16 09:17:46,368 [5] ERROR /Agency/YKCD_GiaoViec.aspx - System.NullReferenceException: Object reference not set to an instance of an object.
+   at YKCD.Agency.Application.Agency.YKCD_GiaoViec.SetDefaultValueOnCreate() in D:\Source\YKCD\Ykcd.Agency.Application\Agency\YKCD_GiaoViec.aspx.cs:line 45
+   at Framework.Web.ManagePageBase.Page_Load(Object sender, EventArgs e) in D:\Source\YKCD\Framework\Web\ManagePageBase.cs:line 41
+2017-02-16 09:18:15,426 [5] ERROR /Agency/YKCD_GiaoViec.aspx - System.NullReferenceException: Object reference not set to an instance of an object.
+   at ASP.controls_thongtinykienchidaocontrol_ascx.__DataBind__control4(Object sender, EventArgs e) in d:\Source\YKCD\Ykcd.Agency.Application\Controls\ThongTinYKienChiDaoControl.ascx:line 44
+   at System.Web.UI.Control.OnDataBinding(EventArgs e)
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBind()
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBind()
+   at System.Web.UI.WebControls.Repeater.CreateItem(Int32 itemIndex, ListItemType itemType, Boolean dataBind, Object dataItem)
+   at System.Web.UI.WebControls.Repeater.AddDataItemsIntoItemsArray(IEnumerable dataSource, Boolean useDataSource)
+   at System.Web.UI.WebControls.Repeater.PostGetDataAction(IEnumerable dataSource)
+   at System.Web.UI.WebControls.Repeater.CreateControlHierarchy(Boolean useDataSource)
+   at System.Web.UI.WebControls.Repeater.OnDataBinding(EventArgs e)
+   at System.Web.UI.WebControls.Repeater.DataBind()
+   at Framework.Helper.Form.BindData(Repeater Repeater, Object Collection) in D:\Source\YKCD\Framework\Helper\Form.cs:line 110
+   at YKCD.Agency.Application.Controls.ThongTinYKienChiDaoControl.Page_Load(Object sender, EventArgs e) in D:\Source\YKCD\Ykcd.Agency.Application\Controls\ThongTinYKienChiDaoControl.ascx.cs:line 13
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+2017-03-06 22:15:15,655 [10] ERROR /Agency/ykcd_Giaoviec.aspx?id=2936 - System.NullReferenceException: Object reference not set to an instance of an object.
+   at ASP.controls_thongtinykienchidaocontrol_ascx.__DataBind__control4(Object sender, EventArgs e) in d:\Source\YKCD\Ykcd.Agency.Application\Controls\ThongTinYKienChiDaoControl.ascx:line 44
+   at System.Web.UI.Control.OnDataBinding(EventArgs e)
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBind()
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBind()
+   at System.Web.UI.WebControls.Repeater.CreateItem(Int32 itemIndex, ListItemType itemType, Boolean dataBind, Object dataItem)
+   at System.Web.UI.WebControls.Repeater.AddDataItemsIntoItemsArray(IEnumerable dataSource, Boolean useDataSource)
+   at System.Web.UI.WebControls.Repeater.PostGetDataAction(IEnumerable dataSource)
+   at System.Web.UI.WebControls.Repeater.CreateControlHierarchy(Boolean useDataSource)
+   at System.Web.UI.WebControls.Repeater.OnDataBinding(EventArgs e)
+   at System.Web.UI.WebControls.Repeater.DataBind()
+   at Framework.Helper.Form.BindData(Repeater Repeater, Object Collection) in D:\Source\YKCD\Framework\Helper\Form.cs:line 110
+   at YKCD.Agency.Application.Controls.ThongTinYKienChiDaoControl.Page_Load(Object sender, EventArgs e) in D:\Source\YKCD\Ykcd.Agency.Application\Controls\ThongTinYKienChiDaoControl.ascx.cs:line 13
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+2017-03-06 22:35:56,044 [24] ERROR /Agency/BaoCao_QuanLy.aspx?pid=2944 - System.InvalidOperationException: Sequence contains no matching element
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source, Func`2 predicate)
+   at YKCD.Agency.Application.Agency.BaoCao_QuanLy.SetDefaultValueOnCreate() in D:\Source\YKCD\Ykcd.Agency.Application\Agency\BaoCao_QuanLy.aspx.cs:line 59
+   at Framework.Web.ManagePageBase.Page_Load(Object sender, EventArgs e) in D:\Source\YKCD\Framework\Web\ManagePageBase.cs:line 41
+2017-03-29 10:39:39,940 [15] ERROR /Agency/ThongKe_TheoDonVi.aspx - System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at YKCD.Agency.Application.Agency.ThongKe_TheoDonVi.btnList_OnClick(Object sender, EventArgs e) in C:\Users\nhatp\Desktop\YKCD\Ykcd.Agency.Application\Agency\ThongKe_TheoDonVi.aspx.cs:line 111
+   at System.Web.UI.WebControls.LinkButton.OnClick(EventArgs e)
+   at System.Web.UI.WebControls.LinkButton.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.WebControls.LinkButton.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+2017-03-29 14:12:52,972 [55] ERROR /Agency/ThongKe_TheoDonVi.aspx - System.InvalidOperationException: Text cannot contain new line ('\n'), carriage return ('\r') or tab ('\t') characters. If you want to break the text or insert a tab, insert SpecialCharacter instance with specific SpecialCharacterType to the parent's InlineCollection.
+   at GemBox.Document.Run.set_Text(String value)
+   at GemBox.Document.Run..ctor(DocumentModel document, String text)
+   at GemBox.Document.Paragraph..ctor(DocumentModel document, String text)
+   at YKCD.Agency.Application.Agency.ThongKe_TheoDonVi.btnList_OnClick(Object sender, EventArgs e) in C:\Users\nhatp\Desktop\YKCD\Ykcd.Agency.Application\Agency\ThongKe_TheoDonVi.aspx.cs:line 156
+   at System.Web.UI.WebControls.LinkButton.OnClick(EventArgs e)
+   at System.Web.UI.WebControls.LinkButton.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.WebControls.LinkButton.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+2017-03-29 14:14:09,479 [56] ERROR /Agency/ThongKe_TheoDonVi.aspx - System.NullReferenceException: Object reference not set to an instance of an object.
+   at Framework.Helper.Convert.RemoveBreakLineCharacters(String str) in C:\Users\nhatp\Desktop\YKCD\Framework\Helper\Convert.cs:line 217
+   at YKCD.Agency.Application.Agency.ThongKe_TheoDonVi.btnList_OnClick(Object sender, EventArgs e) in C:\Users\nhatp\Desktop\YKCD\Ykcd.Agency.Application\Agency\ThongKe_TheoDonVi.aspx.cs:line 156
+   at System.Web.UI.WebControls.LinkButton.OnClick(EventArgs e)
+   at System.Web.UI.WebControls.LinkButton.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.WebControls.LinkButton.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+2017-03-30 08:27:16,979 [17] ERROR /Agency/ThongKe_TheoDonVi.aspx - System.ArgumentException: Cannot set style that doesn't belong to the current DocumentModel. First add style to the DocumentModel.Styles collection and then use it.
+   at GemBox.Document.Format.CheckStyleSetting(Style style)
+   at GemBox.Document.ParagraphFormat.set_Style(ParagraphStyle value)
+   at Framework.Helper.WordExtensions.SetStyle(Paragraph paragraph, ParagraphStyle style) in C:\Users\nhatp\Desktop\YKCD\Framework\Helper\Word.cs:line 40
+   at YKCD.Agency.Application.Agency.ThongKe_TheoDonVi.btnList_OnClick(Object sender, EventArgs e) in C:\Users\nhatp\Desktop\YKCD\Ykcd.Agency.Application\Agency\ThongKe_TheoDonVi.aspx.cs:line 141
+   at System.Web.UI.WebControls.LinkButton.OnClick(EventArgs e)
+   at System.Web.UI.WebControls.LinkButton.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.WebControls.LinkButton.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+2017-04-12 15:46:00,238 [14] ERROR /Agency/BaoCao_QuanLy.aspx?pid=2881 - System.NullReferenceException: Object reference not set to an instance of an object.
+   at Framework.Helper.Form.SelectByValue(ListBox listBox, Object value, Boolean multipleChoice) in D:\Projects\YKCD\Framework\Helper\Form.cs:line 34
+   at YKCD.Agency.Application.Agency.BaoCao_QuanLy.SetDefaultValueOnCreate() in D:\Projects\YKCD\Ykcd.Agency.Application\Agency\BaoCao_QuanLy.aspx.cs:line 92
+   at Framework.Web.ManagePageBase.Page_Load(Object sender, EventArgs e) in D:\Projects\YKCD\Framework\Web\ManagePageBase.cs:line 41
